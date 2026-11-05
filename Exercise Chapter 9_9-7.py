@@ -26,6 +26,6 @@ class Admin(User):
             print(f"- {privilege}")
 
 
-admin_baru = Admin("budi", "santoso", 30, "jakarta")
+admin_baru = Admin("Hafizh", "Ramadhan", 18, "Purwokerto")
 admin_baru.describe_user()
 admin_baru.show_privileges()
