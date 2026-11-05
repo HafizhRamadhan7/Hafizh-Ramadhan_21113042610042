@@ -1,25 +1,15 @@
 from random import choice
 
+# Buat list berisi 10 angka dan 5 huruf (total 15 elemen)
 lotere_pool = [1, 5, 12, 18, 23, 34, 42, 56, 77, 89, 'A', 'B', 'C', 'D', 'E']
+tiket_menang = []
 
-my_ticket = [5, 23, 'A', 'D']
+# Pilih 4 elemen acak secara unik
+while len(tiket_menang) < 4:
+    karakter_terpilih = choice(lotere_pool)
+    if karakter_terpilih not in tiket_menang:
+        tiket_menang.append(karakter_terpilih)
 
-percobaan = 0
-berhasil = False
-
-print("Memulai simulasi pengocokan lotere...")
-
-while not berhasil:
-    percobaan += 1
-    tiket_tarikan = []
-    
-    while len(tiket_tarikan) < 4:
-        karakter = choice(lotere_pool)
-        if karakter not in tiket_tarikan:
-            tiket_tarikan.append(karakter)
-
-    if set(my_ticket) == set(tiket_tarikan):
-        berhasil = True
-
-print(f"\nSelamat! Tiket Anda {my_ticket} akhirnya menang!")
-print(f"Dibutuhkan total {percobaan:,} kali pengocokan loop sampai tiket Anda keluar.")
+print("Kombinasi tiket pemenang hari ini adalah:")
+print(tiket_menang)
+print("\nSelamat! Tiket apa pun yang cocok dengan 4 angka/huruf di atas memenangkan hadiah!")
