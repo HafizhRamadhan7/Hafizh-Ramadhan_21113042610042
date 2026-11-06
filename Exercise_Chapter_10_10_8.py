@@ -7,7 +7,7 @@ for filename in filenames:
     try:
         contents = path.read_text(encoding='utf-8')
     except FileNotFoundError:
-        print(f"Error: File '{filename}' tidak ditemukan di direktori saat ini.")
+        print(f"\n Error: File '{filename}' tidak ditemukan di direktori ini.")
     else:
         print(f"\nIsi dari {filename}:")
         print(contents.strip())
