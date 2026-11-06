@@ -1,17 +1,19 @@
 from pathlib import Path
 
-# Membaca file teks kamu
 path = Path('Exercise_Chapter_10_10_1.txt')
 
 try:
     contents = path.read_text(encoding='utf-8')
 except FileNotFoundError:
-    print(" File 'Exercise_Chapter_10_10_1.txt' tidak ditemukan!")
+    print("File 'Exercise_Chapter_10_10_1.txt' tidak ditemukan!")
 else:
-    # Mengubah teks jadi huruf kecil & menghitung kata 'in'
-    count_all = contents.lower().count('in')
-    count_exact = contents.lower().count('in ')
+    print("--- Isi File Terbaca ---")
+    print(repr(contents))  # Gunakan repr untuk melihat karakter tersembunyi
+    print("------------------------")
 
-    print("--- Output Exercise 10-10 ---")
-    print(f"Kemunculan 'in' (termasuk di dalam kata seperti 'line'): {count_all} kali")
-    print(f"Kemunculan 'in ' (hanya kata mandiri 'In'): {count_exact} kali")
+    count_in = contents.lower().count('in ')
+    count_python = contents.lower().count('python')
+
+    print(f"\nHasil Perhitungan:")
+    print(f"- Kata 'in ': {count_in} kali")
+    print(f"- Kata 'python': {count_python} kali")
